@@ -13,7 +13,9 @@ while True:
 4: Delete tasks 
 Enter option number you want to perform:     
 '''))
-        if 1 <= user_task_selection <= 4:
+        if 1 > user_task_selection or user_task_selection > 4:
+            print("You entered a wrong number, Kindly select from the above numbers!")
+        else:
             if user_task_selection == 1:
                 if add_todo() != 'y':
                     break
@@ -26,7 +28,5 @@ Enter option number you want to perform:
             elif user_task_selection == 4:
                 if remove_task() != 'y':
                     break
-        else:
-            print("You entered a wrong number, Kindly select from the above numbers!")
     except ValueError:
         print("\n You entered a wrong value, Kindly select from the above numbers!")
